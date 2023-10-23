@@ -7,7 +7,7 @@ from llama_index import SimpleDirectoryReader
 st.set_page_config(page_title="Chat with Together", page_icon="∞",
                    layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Chat with the ∞together ai")
+st.title("Chat with the t∞ether ai")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
@@ -17,7 +17,7 @@ if "messages" not in st.session_state.keys():  # Initialize the chat messages hi
 
 @st.cache_resource(show_spinner=False)
 def load_data():
-    with st.spinner(text="∞togetherLoading and indexing.. – hang tight! This should take 1-2 minutes."):
+    with st.spinner(text="t∞ether, Loading and indexing.. Hang tight! This should take 1-2 minutes."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
         service_context = ServiceContext.from_defaults(llm=OpenAI(

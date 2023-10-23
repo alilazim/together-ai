@@ -3,6 +3,7 @@ from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
+from PIL import Image
 
 openai.api_key = st.secrets.openai_key
 st.set_page_config(page_title="Chat with t∞ether ai", page_icon="icon.svg",
@@ -39,14 +40,18 @@ if "chat_engine" not in st.session_state.keys():  # Initialize the chat engine
 if prompt := st.chat_input("Your question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
+imageAvatar = Image.open('user.png')
+if st.session_state.messages[-1]["role"] == "assistant":
+    imageAvatar = Image.open('icon.svg')
+
 for message in st.session_state.messages:  # Display the prior chat messages
-    with st.chat_message(message["role"]):
+    with st.chat_message(message["role"], imageAvatar):
         st.write(message["content"])
 
 # If last message is not from assistant, generate a new response
 if st.session_state.messages[-1]["role"] != "assistant":
-    with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
+    with st.chat_message("assistant", st.image(imageAssistant)):
+        with st.spinner("Thinking...👋"):
             response = st.session_state.chat_engine.chat(prompt)
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}

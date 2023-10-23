@@ -50,7 +50,7 @@ for message in st.session_state.messages:  # Display the prior chat messages
 
 # If last message is not from assistant, generate a new response
 if st.session_state.messages[-1]["role"] != "assistant":
-    with st.chat_message("assistant", st.image(imageAssistant)):
+    with st.chat_message("assistant", st.image(imageAvatar)):
         with st.spinner("Thinking...👋"):
             response = st.session_state.chat_engine.chat(prompt)
             st.write(response.response)

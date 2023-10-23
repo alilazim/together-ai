@@ -4,10 +4,10 @@ from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
 
-st.set_page_config(page_title="Chat with Together", page_icon="∞",
+st.set_page_config(page_title="Chat with t∞ether ai", page_icon="∞",
                    layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Chat with the t∞ether ai")
+st.title("Chat with t∞ether ai")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [

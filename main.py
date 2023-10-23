@@ -42,7 +42,7 @@ if prompt := st.chat_input("Your question"):
 
 imageAvatar = Image.open('user.png')
 if st.session_state.messages[-1]["role"] == "assistant":
-    imageAvatar = Image.open('icon.svg')
+    imageAvatar = Image.open('user.png')
 
 for message in st.session_state.messages:  # Display the prior chat messages
     with st.chat_message(message["role"], imageAvatar):

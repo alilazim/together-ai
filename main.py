@@ -9,7 +9,7 @@ openai.api_key = st.secrets.openai_key
 st.set_page_config(page_title="Chat with t∞ether ai", page_icon="icon.svg",
                    layout="centered", initial_sidebar_state="auto", menu_items=None)
 
-st.title("Chat with t∞ether ai")
+st.title("Chat with t∞ether ai 1")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [

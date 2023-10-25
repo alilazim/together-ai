@@ -18,7 +18,7 @@ def goto_sme_cv():
     exec(open('sme_cv.py').read())
 
 
-st.button("SME: Add CV", on_click="goto_sme_cv()")
+st.button("SME: Add CV", on_click="")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [

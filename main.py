@@ -10,7 +10,7 @@ st.set_page_config(page_title="Chat with t∞ether ai", page_icon="icon.svg",
                    layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 st.title("Chat with t∞ether ai 1")
-st.button("SME: Add CV", key=None, help=None, on_click="sme_cv.py", args=None, kwargs=None, *, type="secondary", disabled=False, use_container_width=False)
+st.button("SME: Add CV", on_click="sme_cv.py")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [

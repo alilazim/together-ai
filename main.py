@@ -8,7 +8,7 @@ import sme_cv
 
 
 openai.api_key = st.secrets.openai_key
-st.set_page_config(page_title="Chat with t∞ether ai", page_icon="icon.svg",
+st.set_page_config(page_title="Chat with t∞ether ai 3", page_icon="icon.svg",
                    layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 st.title("Chat with t∞ether ai")

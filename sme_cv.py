@@ -11,9 +11,9 @@ openai.api_key = st.secrets.openai_key
 st.set_page_config(page_title="SME: t∞ether ai", page_icon="icon.svg",
                    layout="centered", initial_sidebar_state="auto", menu_items=None)
 
-st.title("SME: Upload your CV with t∞ether ai")
+st.title("SME: Upload your CV with t∞ether")
 
-uploaded_file = st.file_uploader("Upload your CV:")
+uploaded_file = st.file_uploader("Upload your CV")
 
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()

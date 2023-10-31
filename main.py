@@ -34,7 +34,7 @@ def load_data():
         docs = reader.load_data()
 
         llm = OpenAI(model="gpt-3.5-turbo",
-                     temperature=0.5, system_prompt="You are an HR expert and your job is to help the manager writing a open job position. If you missing any of these details; Job title, responsibilities, required skills, qualifications, payment, then ask them for that information. If they will ask to find an SME / person match compare them to our CVs and rank them accordingly.")
+                     temperature=0.5, system_prompt="You are an HR expert and your job is to help the manager writing a open job position. Always the Job description should have; Job title, required skills, and payment info.")
         service_context = ServiceContext.from_defaults(llm=llm)
         index = GPTVectorStoreIndex.from_documents(
             docs, service_context=service_context)
@@ -51,6 +51,7 @@ if "chat_engine" not in st.session_state.keys():  # Initialize the chat engine
 
 # Prompt for user input and save to chat history
 if prompt := st.chat_input("Your question"):
+    # prompt = "If the following request for job ad, not providing; Job title, required skills, or payment info, then ask them for that information." + prompt
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages:  # Display the prior chat messages

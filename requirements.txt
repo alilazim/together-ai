@@ -1,5 +1,7 @@
 streamlit
 openai
-llama-index
+llama-index==0.8.57
 nltk
 pypdf
+langchain
+pinecone-client
